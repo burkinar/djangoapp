@@ -32,10 +32,7 @@ SECRET_KEY = env(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=True)
 
-new_var = ".localhost"
-ALLOWED_HOSTS = env.list(
-    "ALLOWED_HOSTS", default=[new_var, "app2.ouaga.shop", "127.0.0.1", "[::1]"]
-)
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 
 # Application definition
