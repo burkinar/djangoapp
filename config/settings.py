@@ -26,13 +26,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env(
     "SECRET_KEY",
-    default='!insecure-secret-key-for-dev!zZaN134B9yx9Hd6eaoxs0hcr5HaVsezwRcNQtVXbveQ',
+    default="!insecure-secret-key-for-dev!zZaN134B9yx9Hd6eaoxs0hcr5HaVsezwRcNQtVXbveQ",
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG', default=True)
+DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
+new_var = ".localhost"
+ALLOWED_HOSTS = env.list(
+    "ALLOWED_HOSTS", default=[new_var, "app2.ouaga.shop", "127.0.0.1", "[::1]"]
+)
 
 
 # Application definition
@@ -139,7 +142,7 @@ STATICFILES_DIRS = [
 ]
 
 WEBPACK_LOADER = {
-    'MANIFEST_FILE': BASE_DIR / "wepynaire" / "_static" / "manifest.json",
+    "MANIFEST_FILE": BASE_DIR / "wepynaire" / "_static" / "manifest.json",
 }
 
 MEDIA_URL = "media/"
@@ -162,45 +165,45 @@ LOGOUT_REDIRECT_URL = "home"
 MARKDOWNIFY = {
     "default": {
         "MARKDOWN_EXTENSIONS": [
-            'markdown.extensions.fenced_code',
-            'markdown.extensions.extra',
-            'markdown.extensions.codehilite',
+            "markdown.extensions.fenced_code",
+            "markdown.extensions.extra",
+            "markdown.extensions.codehilite",
         ],
         "STRIP": False,
         "WHITELIST_TAGS": [
-            'a',
-            'abbr',
-            'acronym',
-            'b',
-            'blockquote',
-            'em',
-            'i',
-            'li',
-            'ol',
-            'p',
-            'strong',
-            'ul',
-            'code',
-            'span',
-            'div',
-            'class',
-            'pre',
-            'h1',
-            'h2',
-            'h3',
-            'h4',
-            'h5',
-            'h6',
+            "a",
+            "abbr",
+            "acronym",
+            "b",
+            "blockquote",
+            "em",
+            "i",
+            "li",
+            "ol",
+            "p",
+            "strong",
+            "ul",
+            "code",
+            "span",
+            "div",
+            "class",
+            "pre",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
         ],
         "WHITELIST_ATTRS": [
-            'href',
-            'src',
-            'alt',
-            'class',
+            "href",
+            "src",
+            "alt",
+            "class",
         ],
         "WHITELIST_PROTOCOLS": [
-            'http',
-            'https',
+            "http",
+            "https",
         ],
     }
 }
